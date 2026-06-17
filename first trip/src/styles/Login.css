@@ -1,0 +1,277 @@
+/* =========================
+   LOGIN PAGE
+========================= */
+
+.login-page {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  overflow: hidden;
+
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+}
+
+/* Animated glow effects */
+
+.login-page::before,
+.login-page::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  opacity: 0.7;
+}
+
+.login-page::before {
+  width: 700px;
+  height: 700px;
+
+  background: rgba(14, 165, 233, 0.18);
+
+  top: -250px;
+  right: -250px;
+
+  animation: floatGlow 10s ease-in-out infinite alternate;
+}
+
+.login-page::after {
+  width: 600px;
+  height: 600px;
+
+  background: rgba(99, 102, 241, 0.14);
+
+  bottom: -250px;
+  left: -250px;
+
+  animation: floatGlow 12s ease-in-out infinite alternate;
+}
+
+@keyframes floatGlow {
+  from {
+    transform: translate(0, 0) scale(1);
+  }
+
+  to {
+    transform: translate(-20px, 30px) scale(1.1);
+  }
+}
+
+/* =========================
+   HIDE OLD SPLIT LAYOUT
+========================= */
+
+.login-left,
+.login-right {
+  display: contents;
+}
+
+/* =========================
+   LOGIN CARD
+========================= */
+
+.login-card {
+  width: 100%;
+  max-width: 480px;
+
+  padding: 40px;
+
+  position: relative;
+  z-index: 2;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35);
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.login-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* FirstTrip */
+
+.login-header h1 {
+  font-size: 1rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+
+  color: #38bdf8;
+
+  margin-bottom: 10px;
+}
+
+/* Welcome Back */
+
+.login-header h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+
+  color: white;
+
+  margin-bottom: 10px;
+}
+
+.login-header p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* =========================
+   FORM
+========================= */
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  color: #ffffff !important;
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.form-group input {
+  padding: 16px;
+
+  border-radius: 14px;
+  border: 1px solid rgba(228, 223, 223, 0.93);
+
+  background: rgba(255, 255, 255, 0.05);
+
+  color: rgb(245, 244, 244);
+
+
+  font-size: 1rem;
+
+  transition: all 0.3s ease;
+}
+
+.form-group input::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.form-group input:focus {
+  outline: none;
+
+  border-color: #38bdf8;
+
+  box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.15);
+}
+
+/* =========================
+   OPTIONS
+========================= */
+
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.login-options a {
+  text-decoration: none;
+  color: #38bdf8;
+  font-weight: 600;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.login-btn {
+  margin-top: 10px;
+
+  padding: 16px;
+
+  border: none;
+  border-radius: 14px;
+
+  background: linear-gradient(
+    135deg,
+    #0ea5e9,
+    #0284c7
+  );
+
+  color: white;
+
+  font-size: 1rem;
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+}
+
+.login-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 15px 30px rgba(14, 165, 233, 0.3);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.login-footer {
+  margin-top: 25px;
+  text-align: center;
+}
+
+.login-footer p {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.login-footer a {
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+  .login-card {
+    margin: 20px;
+    padding: 30px 20px;
+  }
+
+  .login-header h2 {
+    font-size: 1.8rem;
+  }
+
+  .login-options {
+    flex-direction: column;
+    gap: 12px;
+  }
+}

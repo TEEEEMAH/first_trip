@@ -1,0 +1,316 @@
+/* ==================================================
+   FIRSTTRIP — PREMIUM GLASSMORPHISM NAVBAR
+================================================== */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  height: 84px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 6%;
+
+  background: rgba(2, 6, 23, 0.65);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+  transition: all 0.3s ease;
+}
+
+/* =====================================
+   LOGO
+===================================== */
+
+.logo-link {
+  text-decoration: none;
+  color: inherit;
+
+  display: flex;
+  flex-direction: column;
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  cursor: pointer;
+}
+
+.logo::before {
+  content: "";
+  width: 22px;
+  height: 22px;
+  border-radius: 14px;
+
+  background: linear-gradient(
+    135deg,
+    #38bdf8,
+    #7c3aed
+  );
+
+  box-shadow:
+    0 10px 30px rgba(56, 189, 248, 0.35),
+    0 0 40px rgba(124, 58, 237, 0.25);
+}
+
+.logo h2 {
+  color: white;
+  font-size: 1.45rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin: 0;
+}
+
+/* =====================================
+   NAVIGATION LINKS
+===================================== */
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+}
+
+.nav-links a {
+  position: relative;
+
+  text-decoration: none;
+  color: #cbd5e1;
+
+  font-size: 0.95rem;
+  font-weight: 500;
+
+  transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ffffff;
+}
+
+/* Animated underline */
+
+.nav-links a::after {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+
+  width: 0%;
+  height: 2px;
+
+  border-radius: 999px;
+
+  background: linear-gradient(
+    90deg,
+    #38bdf8,
+    #7c3aed
+  );
+
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* =====================================
+   ACTION AREA
+===================================== */
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Login */
+
+.nav-login-btn {
+  text-decoration: none;
+
+  color: #cbd5e1;
+  font-weight: 600;
+
+  padding: 0.8rem 1rem;
+  border-radius: 12px;
+
+  transition: all 0.3s ease;
+}
+
+.nav-login-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: white;
+}
+
+/* =====================================
+   PRIMARY CTA
+===================================== */
+
+.cta-btn {
+  position: relative;
+
+  border: none;
+  outline: none;
+
+  padding: 0.9rem 1.4rem;
+
+  border-radius: 14px;
+
+  font-weight: 700;
+  font-size: 0.95rem;
+
+  color: white;
+
+  cursor: pointer;
+
+  background: linear-gradient(
+    135deg,
+    #38bdf8,
+    #7c3aed
+  );
+
+  box-shadow:
+    0 12px 30px rgba(56, 189, 248, 0.25),
+    0 4px 12px rgba(124, 58, 237, 0.15);
+
+  transition: all 0.35s ease;
+
+  overflow: hidden;
+}
+
+/* Glow */
+
+.cta-btn::before {
+  content: "";
+
+  position: absolute;
+
+  top: 0;
+  left: -120%;
+
+  width: 120%;
+}
+/* =========================
+   MOBILE MENU BUTTON
+========================= */
+
+.menu-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* =========================
+   OVERLAY
+========================= */
+
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.55);
+  backdrop-filter: blur(4px);
+  z-index: 999;
+}
+
+/* =========================
+   MOBILE DRAWER
+========================= */
+
+.mobile-menu {
+  position: fixed;
+
+  top: 0;
+  right: -100%;
+
+  width: 320px;
+  max-width: 85vw;
+
+  height: 100vh;
+
+  background: rgba(2, 6, 23, 0.97);
+
+  backdrop-filter: blur(25px);
+
+  border-left: 1px solid rgba(255,255,255,.08);
+
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: column;
+
+  transition: right .35s ease;
+}
+
+.mobile-menu.open {
+  right: 0;
+}
+
+.close-menu {
+  background: transparent;
+  border: none;
+
+  color: white;
+
+  font-size: 2rem;
+
+  align-self: flex-end;
+
+  margin: 1rem;
+
+  cursor: pointer;
+}
+
+.mobile-menu a {
+  color: white;
+
+  text-decoration: none;
+
+  padding: 1.25rem 1.75rem;
+
+  border-bottom: 1px solid rgba(255,255,255,.08);
+
+  transition: .25s;
+}
+
+.mobile-menu a:hover {
+  background: rgba(255,255,255,.05);
+}
+
+.mobile-register-btn {
+  color: #38bdf8 !important;
+  font-weight: 700;
+}
+
+/* =========================
+   TABLET & MOBILE
+========================= */
+
+@media (max-width: 992px) {
+
+  .nav-links,
+  .nav-actions {
+    display: none;
+  }
+
+  .menu-btn {
+    display: block;
+  }
+
+  .navbar {
+    justify-content: space-between;
+  }
+}

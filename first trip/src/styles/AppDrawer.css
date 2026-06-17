@@ -1,0 +1,133 @@
+/* =========================
+APP DRAWER (SIDE MENU)
+========================= */
+
+.sidebar-overlay {
+position: fixed;
+inset: 0;
+
+background: rgba(0, 0, 0, 0.55);
+
+backdrop-filter: blur(2px);
+
+z-index: 998;
+}
+
+/* =========================
+DRAWER CONTAINER
+========================= */
+
+.app-drawer {
+position: fixed;
+top: 0;
+left: -280px;
+
+width: 260px;
+height: 100vh;
+
+background: #020617;
+
+border-right: 1px solid rgba(255, 255, 255, 0.08);
+
+padding: 25px 20px;
+
+display: flex;
+flex-direction: column;
+gap: 10px;
+
+transition: all 0.3s ease;
+
+z-index: 999;
+}
+
+/* OPEN STATE */
+
+.app-drawer.open {
+left: 0;
+}
+
+/* =========================
+CLOSE BUTTON
+========================= */
+
+.close-drawer {
+background: none;
+border: none;
+
+color: white;
+
+font-size: 1.4rem;
+
+cursor: pointer;
+
+margin-bottom: 20px;
+
+align-self: flex-end;
+}
+
+/* =========================
+LOGO SECTION
+========================= */
+
+.drawer-logo {
+margin-bottom: 25px;
+}
+
+.drawer-logo h2 {
+color: white;
+font-size: 1.4rem;
+}
+
+.drawer-logo span {
+color: #94a3b8;
+font-size: 0.85rem;
+}
+
+/* =========================
+NAV LINKS
+========================= */
+
+.drawer-nav {
+display: flex;
+flex-direction: column;
+gap: 8px;
+}
+
+.drawer-nav a {
+text-decoration: none;
+
+color: #cbd5e1;
+
+padding: 12px 14px;
+
+border-radius: 12px;
+
+transition: 0.3s;
+
+font-size: 0.95rem;
+}
+
+.drawer-nav a:hover {
+background: rgba(255, 255, 255, 0.06);
+color: white;
+}
+
+/* ACTIVE FEEL (optional enhancement) */
+.drawer-nav a:active {
+transform: scale(0.98);
+}
+
+/* =========================
+MOBILE OPTIMIZATION
+========================= */
+
+@media (max-width: 768px) {
+.app-drawer {
+width: 85%;
+left: -100%;
+}
+
+.app-drawer.open {
+left: 0;
+}
+}

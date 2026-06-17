@@ -1,0 +1,28 @@
+    .app-theme.dark {
+  --bg: #020617;
+  --bg-soft: #0f172a;
+
+  --card: #111827;
+
+  --text: #ffffff;
+  --text-secondary: #94a3b8;
+
+  --border: rgba(255,255,255,.08);
+
+  background: var(--bg);
+  color: var(--text);
+}
+.app-theme.light {
+  --bg: #f8fafc;
+  --bg-soft: #ffffff;
+
+  --card: #ffffff;
+
+  --text: #0f172a;
+  --text-secondary: #475569;
+
+  --border: rgba(15,23,42,.08);
+
+  background: var(--bg);
+  color: var(--text);
+}

@@ -1,0 +1,227 @@
+/* =========================
+   APP LAYOUT BASE
+========================= */
+
+.app-layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #020617; /* matches your SaaS dark theme */
+  color: #e2e8f0;
+}
+
+
+.app-topbar {
+  height: 72px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 24px;
+  
+
+  background: rgba(2, 6, 23, 0.95);
+
+  border-bottom: 1px solid rgba(255,255,255,.08);
+
+  position: sticky;
+  top: 0;
+
+  z-index: 100;
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.menu-toggle {
+  width: 42px;
+  height: 42px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: rgba(255,255,255,.08);
+
+  color: white;
+
+  cursor: pointer;
+
+  font-size: 1.1rem;
+}
+
+.app-brand h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.app-brand span {
+  color: #94a3b8;
+  font-size: 0.8rem;
+}
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.app-content {
+  padding-top: 24px;
+}
+
+/* =========================
+   TOP MENU BUTTON (HAMBURGER)
+========================= */
+
+.menu-btn {
+  position: fixed;
+  top: 18px;
+  left: 18px;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: white;
+
+  font-size: 20px;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 2000;
+
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+}
+
+.menu-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  transform: scale(1.05);
+}
+
+/* =========================
+   APP DRAWER BACKDROP
+========================= */
+
+.sidebar-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100vh;
+
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition: 0.3s ease;
+  z-index: 2500;
+}
+
+.sidebar-backdrop.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* =========================
+   SIDEBAR / DRAWER
+========================= */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 280px;
+  height: 100vh;
+
+  background: linear-gradient(180deg, #0f172a, #020617);
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+
+  z-index: 3000;
+
+  display: flex;
+  flex-direction: column;
+
+  padding: 20px;
+}
+
+/* OPEN STATE */
+.sidebar.open {
+  transform: translateX(0);
+}
+
+/* =========================
+   SIDEBAR HEADER
+========================= */
+
+.sidebar-header {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: #ffffff;
+}
+
+/* =========================
+   SIDEBAR LINKS
+========================= */
+
+.sidebar-link {
+  padding: 12px 14px;
+  margin-bottom: 10px;
+
+  border-radius: 10px;
+
+  color: #cbd5e1;
+  text-decoration: none;
+
+  display: block;
+
+  transition: 0.2s ease;
+}
+
+.sidebar-link:hover {
+  background: rgba(255, 255, 255, 0.06);
+  color: white;
+  transform: translateX(4px);
+}
+
+/* ACTIVE LINK */
+.sidebar-link.active {
+  background: rgba(59, 130, 246, 0.15);
+  color: #60a5fa;
+}
+
+/* =========================
+   MAIN CONTENT WRAPPER
+========================= */
+
+.app-content {
+  flex: 1;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 260px;
+  }
+
+  
+}

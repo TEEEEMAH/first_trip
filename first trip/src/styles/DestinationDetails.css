@@ -1,0 +1,459 @@
+/* =========================
+   DESTINATION DETAILS PAGE
+========================= */
+
+.destination-details-page {
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(14,165,233,.12),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(20,184,166,.08),
+      transparent 35%
+    ),
+    #020617;
+
+  color: white;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.destination-hero {
+  position: relative;
+
+  min-height: 550px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 80px 6%;
+
+  background-image:
+    url("https://images.unsplash.com/photo-1503614472-8c93d56e92ce?q=80&w=2000");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(2,6,23,.35),
+      rgba(2,6,23,.90)
+    );
+}
+
+.destination-hero-content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 700px;
+}
+
+.destination-tag {
+  display: inline-block;
+
+  padding: 8px 18px;
+
+  border-radius: 999px;
+
+  background: rgba(14,165,233,.18);
+
+  border: 1px solid rgba(14,165,233,.35);
+
+  color: #7dd3fc;
+
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.destination-hero h1 {
+  margin-top: 20px;
+
+  font-size: 5rem;
+  font-weight: 800;
+
+  line-height: 1.05;
+}
+
+.destination-hero p {
+  margin-top: 18px;
+
+  max-width: 650px;
+
+  color: #cbd5e1;
+
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+/* =========================
+   MATCH SCORE
+========================= */
+
+.match-score {
+  margin-top: 30px;
+
+  width: fit-content;
+
+  padding: 20px 28px;
+
+  border-radius: 22px;
+
+  backdrop-filter: blur(20px);
+
+  background: rgba(255,255,255,.08);
+
+  border: 1px solid rgba(255,255,255,.12);
+}
+
+.match-score span {
+  display: block;
+
+  color: #94a3b8;
+
+  margin-bottom: 8px;
+}
+
+.match-score h2 {
+  font-size: 3rem;
+
+  color: var(--primary);
+}
+
+/* =========================
+   STATS
+========================= */
+
+.stats-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 24px;
+
+  padding: 60px 6%;
+}
+
+.stat-card {
+  padding: 30px;
+
+  border-radius: 24px;
+
+  background: rgba(255,255,255,.04);
+
+  border: 1px solid rgba(255,255,255,.08);
+
+  backdrop-filter: blur(20px);
+
+  transition: .3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-8px);
+
+  border-color: rgba(14,165,233,.35);
+}
+
+.stat-card span {
+  display: block;
+
+  color: #94a3b8;
+
+  margin-bottom: 12px;
+}
+
+.stat-card h3 {
+  font-size: 1.8rem;
+}
+
+/* =========================
+   SHARED SECTIONS
+========================= */
+
+.ai-insight-section,
+.cities-section,
+.universities-section,
+.requirements-section,
+.destination-cta {
+  padding: 0 6%;
+  margin-bottom: 70px;
+}
+
+.section-header {
+  margin-bottom: 30px;
+}
+
+.section-header h2 {
+  font-size: 2.3rem;
+}
+
+.section-tag {
+  color: #7dd3fc;
+
+  font-size: .8rem;
+
+  letter-spacing: 1px;
+
+  font-weight: 600;
+}
+
+/* =========================
+   AI INSIGHT
+========================= */
+
+.ai-insight-card {
+  padding: 40px;
+
+  border-radius: 30px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(14,165,233,.10),
+      rgba(20,184,166,.08)
+    );
+
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.ai-insight-card h2 {
+  margin-top: 12px;
+  margin-bottom: 25px;
+
+  font-size: 2rem;
+}
+
+.ai-insight-card ul {
+  list-style: none;
+  padding: 0;
+}
+
+.ai-insight-card li {
+  margin-bottom: 14px;
+
+  color: #cbd5e1;
+}
+
+/* =========================
+   CITIES
+========================= */
+
+.cities-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 24px;
+}
+
+.city-card {
+  padding: 28px;
+
+  border-radius: 24px;
+
+  background: rgba(255,255,255,.04);
+
+  border: 1px solid rgba(255,255,255,.08);
+
+  transition: .3s ease;
+}
+
+.city-card:hover {
+  transform: translateY(-8px);
+}
+
+.city-card h3 {
+  margin-bottom: 10px;
+}
+
+.city-card p {
+  color: #94a3b8;
+}
+
+/* =========================
+   UNIVERSITIES
+========================= */
+
+.universities-grid {
+  display: grid;
+
+  grid-template-columns: repeat(2, 1fr);
+
+  gap: 20px;
+}
+
+.university-card {
+  padding: 24px;
+
+  border-radius: 20px;
+
+  background: rgba(255,255,255,.04);
+
+  border: 1px solid rgba(255,255,255,.08);
+
+  transition: .3s ease;
+}
+
+.university-card:hover {
+  border-color: rgba(14,165,233,.35);
+
+  transform: translateX(6px);
+}
+
+/* =========================
+   REQUIREMENTS
+========================= */
+
+.requirements-grid {
+  display: grid;
+
+  grid-template-columns: repeat(5, 1fr);
+
+  gap: 20px;
+}
+
+.requirement-card {
+  text-align: center;
+
+  padding: 22px;
+
+  border-radius: 20px;
+
+  background: rgba(255,255,255,.04);
+
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+/* =========================
+   CTA
+========================= */
+
+.cta-card {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 30px;
+
+  padding: 40px;
+
+  border-radius: 30px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(14,165,233,.10),
+      rgba(20,184,166,.08)
+    );
+
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.cta-card h2 {
+  margin-bottom: 10px;
+
+  font-size: 2rem;
+}
+
+.cta-card p {
+  color: #94a3b8;
+}
+
+.start-trip-btn {
+  padding: 16px 30px;
+
+  border: none;
+  border-radius: 16px;
+
+  cursor: pointer;
+
+  font-weight: 700;
+  font-size: 1rem;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--primary),
+      var(--secondary)
+    );
+
+  transition: .3s ease;
+}
+
+.start-trip-btn:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 18px 40px rgba(14,165,233,.35);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+
+  .stats-grid,
+  .cities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .requirements-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+
+  .destination-hero h1 {
+    font-size: 3.5rem;
+  }
+
+  .cta-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .universities-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+
+  .stats-grid,
+  .cities-grid,
+  .requirements-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .destination-hero {
+    min-height: 450px;
+  }
+
+  .destination-hero h1 {
+    font-size: 2.8rem;
+  }
+
+  .match-score h2 {
+    font-size: 2.2rem;
+  }
+}

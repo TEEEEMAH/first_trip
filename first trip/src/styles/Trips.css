@@ -1,0 +1,333 @@
+/* =========================
+   TRIPS PAGE
+========================= */
+
+.trips-page {
+  min-height: 100vh;
+
+  background:
+    radial-gradient(circle at top right,
+      rgba(14,165,233,.12),
+      transparent 35%),
+    radial-gradient(circle at bottom left,
+      rgba(20,184,166,.08),
+      transparent 35%),
+    #020617;
+
+  padding: 40px 5%;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.create-trip-btn {
+  padding: 16px 24px;
+
+  border: none;
+  border-radius: 14px;
+
+  cursor: pointer;
+
+  font-weight: 700;
+  font-size: 1rem;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--primary),
+      var(--secondary)
+    );
+
+  transition: 0.3s ease;
+}
+
+.create-trip-btn:hover {
+  transform: translateY(-3px);
+}
+
+.trips-hero {
+  margin-bottom: 40px;
+}
+
+.trips-hero h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+
+  color: white;
+}
+
+.trips-hero p {
+  margin-top: 12px;
+
+  max-width: 700px;
+
+  color: #94a3b8;
+
+  line-height: 1.8;
+}
+
+/* =========================
+   STATS
+========================= */
+
+.trip-stats {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 20px;
+
+  margin-bottom: 40px;
+}
+
+.stat-card {
+  background: rgba(255,255,255,.04);
+
+  border: 1px solid rgba(255,255,255,.08);
+
+  backdrop-filter: blur(18px);
+
+  border-radius: 24px;
+
+  padding: 25px;
+}
+
+.stat-card h2 {
+  color: white;
+
+  font-size: 2rem;
+}
+
+.stat-card span {
+  color: #94a3b8;
+}
+
+/* =========================
+   SEARCH
+========================= */
+
+.trip-search {
+  margin-bottom: 40px;
+}
+
+.trip-search input {
+  width: 100%;
+
+  padding: 16px 20px;
+
+  border-radius: 16px;
+
+  border: 1px solid rgba(255,255,255,.08);
+
+  background: rgba(255,255,255,.05);
+
+  color: white;
+
+  outline: none;
+}
+
+.trip-search input::placeholder {
+  color: #64748b;
+}
+
+/* =========================
+   TRIPS GRID
+========================= */
+
+.trips-grid {
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+
+  gap: 24px;
+}
+
+/* =========================
+   TRIP CARD
+========================= */
+
+.trip-card {
+  height: 420px;
+
+  background-size: cover;
+  background-position: center;
+
+  border-radius: 28px;
+
+  overflow: hidden;
+
+  position: relative;
+
+  transition: .4s ease;
+}
+
+.trip-card:hover {
+  transform: translateY(-8px);
+}
+
+.trip-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  padding: 24px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  background:
+    linear-gradient(
+      rgba(2,6,23,.15),
+      rgba(2,6,23,.92)
+    );
+}
+
+/* =========================
+   CARD TOP
+========================= */
+
+.trip-top {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 20px;
+}
+
+.flag {
+  font-size: 2rem;
+}
+
+.status-badge {
+  padding: 8px 14px;
+
+  border-radius: 999px;
+
+  background: rgba(14,165,233,.15);
+
+  border: 1px solid rgba(14,165,233,.3);
+
+  color: #7dd3fc;
+
+  font-size: .8rem;
+
+  font-weight: 600;
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.trip-overlay h2 {
+  color: white;
+
+  font-size: 2rem;
+
+  margin-bottom: 8px;
+}
+
+.trip-overlay p {
+  color: #cbd5e1;
+
+  margin-bottom: 20px;
+}
+
+/* =========================
+   PROGRESS
+========================= */
+
+.progress-wrapper {
+  margin-bottom: 20px;
+}
+
+.progress-bar {
+  height: 10px;
+
+  border-radius: 999px;
+
+  overflow: hidden;
+
+  background: rgba(255,255,255,.1);
+
+  margin-bottom: 8px;
+}
+
+.progress-fill {
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--primary),
+      var(--secondary)
+    );
+
+  border-radius: 999px;
+}
+
+.progress-wrapper span {
+  color: #94a3b8;
+
+  font-size: .9rem;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.trip-btn {
+  padding: 14px;
+
+  border: none;
+
+  border-radius: 14px;
+
+  cursor: pointer;
+
+  font-weight: 700;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      135deg,
+      var(--primary),
+      var(--secondary)
+    );
+
+  transition: .3s;
+}
+
+.trip-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+
+  .trip-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 700px) {
+
+  .trip-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .trips-hero h1 {
+    font-size: 2.5rem;
+  }
+
+}

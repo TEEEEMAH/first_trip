@@ -1,0 +1,294 @@
+/* =========================
+   CHECKLIST PAGE
+========================= */
+
+.checklist-page {
+  min-height: 100vh;
+  padding: 50px 5%;
+
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(14,165,233,.12),
+      transparent 35%
+    ),
+    radial-gradient(
+      circle at bottom left,
+      rgba(20,184,166,.08),
+      transparent 35%
+    ),
+    #020617;
+
+  color: white;
+}
+
+/* =========================
+   HERO
+========================= */
+
+.checklist-hero {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.checklist-tag {
+  display: inline-block;
+
+  padding: 8px 18px;
+
+  border-radius: 999px;
+
+  background: rgba(14,165,233,.15);
+
+  border: 1px solid rgba(14,165,233,.3);
+
+  color: #7dd3fc;
+
+  font-size: .8rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.checklist-hero h1 {
+  margin-top: 20px;
+
+  font-size: 4rem;
+  font-weight: 800;
+}
+
+.checklist-hero p {
+  margin-top: 15px;
+
+  color: #94a3b8;
+
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+/* =========================
+   PROGRESS CARD
+========================= */
+
+.progress-section {
+  margin-bottom: 40px;
+}
+
+.progress-card {
+  padding: 30px;
+
+  border-radius: 28px;
+
+  background: rgba(255,255,255,.04);
+
+  border: 1px solid rgba(255,255,255,.08);
+
+  backdrop-filter: blur(20px);
+}
+
+.progress-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 20px;
+}
+
+.progress-header h2 {
+  margin-bottom: 8px;
+}
+
+.progress-header p {
+  color: #94a3b8;
+}
+
+.progress-header h3 {
+  font-size: 2rem;
+  color: var(--primary);
+}
+
+.progress-bar {
+  height: 14px;
+
+  border-radius: 999px;
+
+  overflow: hidden;
+
+  background: rgba(255,255,255,.08);
+}
+
+.progress-fill {
+  height: 100%;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      var(--primary),
+      var(--secondary)
+    );
+
+  transition: width .5s ease;
+}
+
+/* =========================
+   TASKS
+========================= */
+
+.tasks-section {
+  display: flex;
+  flex-direction: column;
+
+  gap: 18px;
+
+  margin-bottom: 50px;
+}
+
+.task-card {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 20px;
+
+  padding: 22px 25px;
+
+  border-radius: 20px;
+
+  background: rgba(255,255,255,.04);
+
+  border: 1px solid rgba(255,255,255,.08);
+
+  backdrop-filter: blur(20px);
+
+  transition: .3s ease;
+}
+
+.task-card:hover {
+  transform: translateY(-4px);
+
+  border-color:
+    rgba(14,165,233,.3);
+}
+
+.task-content {
+  display: flex;
+  align-items: center;
+
+  gap: 15px;
+}
+
+.task-content input {
+  width: 20px;
+  height: 20px;
+
+  cursor: pointer;
+
+  accent-color: var(--primary);
+}
+
+.task-content span {
+  font-size: 1rem;
+}
+
+.task-status {
+  font-weight: 600;
+  color: #94a3b8;
+}
+
+/* =========================
+   COMPLETED TASKS
+========================= */
+
+.task-card.completed {
+  border-color:
+    rgba(34,197,94,.35);
+
+  background:
+    rgba(34,197,94,.06);
+}
+
+.task-card.completed .task-status {
+  color: var(--success);
+}
+
+.task-card.completed span {
+  text-decoration: line-through;
+  opacity: .8;
+}
+
+/* =========================
+   AI INSIGHT
+========================= */
+
+.insight-card {
+  padding: 40px;
+
+  border-radius: 28px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(14,165,233,.10),
+      rgba(20,184,166,.08)
+    );
+
+  border: 1px solid rgba(255,255,255,.08);
+}
+
+.insight-card span {
+  color: #7dd3fc;
+
+  font-size: .8rem;
+
+  font-weight: 600;
+
+  letter-spacing: 1px;
+}
+
+.insight-card h2 {
+  margin-top: 12px;
+  margin-bottom: 18px;
+
+  font-size: 2rem;
+}
+
+.insight-card p {
+  color: #cbd5e1;
+
+  line-height: 1.8;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+  .checklist-hero h1 {
+    font-size: 3rem;
+  }
+
+  .progress-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+}
+
+@media (max-width: 700px) {
+
+  .task-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .checklist-hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .insight-card h2 {
+    font-size: 1.6rem;
+  }
+}
