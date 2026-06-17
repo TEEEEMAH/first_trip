@@ -38,38 +38,41 @@ function App() {
   "/checklist",
   "/ai-assistant",
   "/visa-center",
+  "/settings"
 ];
   return (
-    <>
-      {!appPages.includes(location.pathname) && (
-  <Navbar />
-)}
+  <div className={`app-theme ${theme}`}>
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} /> 
-        <Route path="/forgot-password" element={<ForgotPassword />} />  
-        <Route path="/onboarding" element={<Onboarding />} /> 
-        <Route path="/dashboard" element={<Dashboard />} />   
-        <Route path="/trips" element={<Trips />} />   
-        <Route path="/create-trip" element={<CreateTrip />} />   
-        <Route path="/trip-details" element={<TripDetails />} />  
-        <Route path="/destinations" element={<Destinations />} />
-        <Route path="/destination-details" element={<DestinationDetails />} />  
-        <Route path="/checklist" element={<Checklist />} /> 
-        <Route path="/ai-assistant" element={<AIAssistant />} />
-        <Route path="/visa-center" element={<VisaCenter />} />
-        <Route path="/profile" element={<Profile />} />   
-        <Route path="/notifications" element={<Notifications />} />
-        <Route path="/settings" element={<Settings />} />
-      </Routes>
+    {!appPages.includes(location.pathname) && (
+      <Navbar />
+    )}
 
-      {!appPages.includes(location.pathname) && (
-  <Footer />
-)}
-    </>
-  );
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/forgot-password" element={<ForgotPassword />} />
+      <Route path="/onboarding" element={<Onboarding />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/trips" element={<Trips />} />
+      <Route path="/create-trip" element={<CreateTrip />} />
+      <Route path="/trip-details" element={<TripDetails />} />
+      <Route path="/destinations" element={<Destinations />} />
+      <Route path="/destination-details" element={<DestinationDetails />} />
+      <Route path="/checklist" element={<Checklist />} />
+      <Route path="/ai-assistant" element={<AIAssistant />} />
+      <Route path="/visa-center" element={<VisaCenter />} />
+      <Route path="/profile" element={<Profile />} />
+      <Route path="/notifications" element={<Notifications />} />
+      <Route path="/settings" element={<Settings />} />
+    </Routes>
+
+    {!appPages.includes(location.pathname) && (
+      <Footer />
+    )}
+
+  </div>
+);
 }
 
 export default App;

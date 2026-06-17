@@ -1,20 +1,16 @@
-
 import AppLayout from "../components/Layout/AppLayout";
-import { useState } from "react";
 import { useTheme } from "../context/ThemeContext";
 import "../styles/Settings.css";
 
 const Settings = () => {
-    const { theme, setTheme } = useTheme();
+  const { theme, setTheme } = useTheme();
+
   return (
     <AppLayout>
-
       <main className="settings-page">
 
         {/* HERO */}
-
         <section className="settings-hero">
-
           <span className="settings-tag">
             ACCOUNT SETTINGS
           </span>
@@ -25,11 +21,9 @@ const Settings = () => {
             Manage your account, security,
             travel preferences and AI experience.
           </p>
-
         </section>
 
         {/* ACCOUNT */}
-
         <section className="settings-card">
 
           <h2>Account Information</h2>
@@ -77,7 +71,6 @@ const Settings = () => {
         </section>
 
         {/* SECURITY */}
-
         <section className="settings-card">
 
           <h2>Security</h2>
@@ -109,7 +102,6 @@ const Settings = () => {
         </section>
 
         {/* NOTIFICATIONS */}
-
         <section className="settings-card">
 
           <h2>Notifications</h2>
@@ -146,7 +138,6 @@ const Settings = () => {
         </section>
 
         {/* TRAVEL PREFERENCES */}
-
         <section className="settings-card">
 
           <h2>Travel Preferences</h2>
@@ -200,7 +191,6 @@ const Settings = () => {
         </section>
 
         {/* APPEARANCE */}
-
         <section className="settings-card">
 
           <h2>Appearance</h2>
@@ -210,9 +200,19 @@ const Settings = () => {
             <div className="form-group">
               <label>Theme</label>
 
-              <select>
-                <option>Dark</option>
-                <option>Light</option>
+              <select
+                value={theme}
+                onChange={(e) =>
+                  setTheme(e.target.value)
+                }
+              >
+                <option value="dark">
+                  Dark
+                </option>
+
+                <option value="light">
+                  Light
+                </option>
               </select>
             </div>
 
@@ -231,8 +231,7 @@ const Settings = () => {
 
         </section>
 
-        {/* AI SETTINGS */}
-
+        {/* AI FEATURES */}
         <section className="settings-card">
 
           <h2>AI Features</h2>
@@ -264,7 +263,6 @@ const Settings = () => {
         </section>
 
         {/* DANGER ZONE */}
-
         <section className="settings-card danger-zone">
 
           <h2>Danger Zone</h2>
@@ -284,10 +282,8 @@ const Settings = () => {
         </section>
 
       </main>
-
     </AppLayout>
   );
 };
 
 export default Settings;
-
