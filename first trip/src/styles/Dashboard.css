@@ -4,18 +4,8 @@
 
 .dashboard {
   min-height: 100vh;
-  background:
-    radial-gradient(circle at top right,
-      rgba(14,165,233,0.18),
-      transparent 30%),
-    radial-gradient(circle at bottom left,
-      rgba(20,184,166,0.12),
-      transparent 30%),
-    #020617;
+  background: var(--bg);
   padding: 30px;
-}
-.dashboard {
-  min-height: 100vh;
 }
 
 
@@ -132,13 +122,13 @@
   color: white;
 }
 .dashboard-brand h3 {
-  color: white;
+  color: var(--text);
   font-size: 1.3rem;
   margin: 0;
 }
 
 .dashboard-brand span {
-  color: #94a3b8;
+  color: var(--text-secondary);
   font-size: .85rem;
 }
 
@@ -161,11 +151,11 @@
 
   border-radius: 50%;
 
-  color: white;
+  color: var(--text);
 
-  background: rgba(255,255,255,.06);
+  background: var(--card-bg);
 
-  border: 1px solid rgba(255,255,255,.08);
+  border: 1px solid var(--border);
 
   backdrop-filter: blur(20px);
 
@@ -255,7 +245,7 @@
   font-size: 5rem;
   font-weight: 900;
 
-  color: white;
+  color: var(--text);
 
   margin-top: 25px;
   margin-bottom: 20px;
@@ -264,7 +254,7 @@
 }
 
 .hero-content p {
-  color: #e2e8f0;
+  color: var(--text-secondary);
 
   font-size: 1.15rem;
 
@@ -331,17 +321,14 @@
 
 .primary-btn {
   padding: 16px 28px;
-
   border: none;
   border-radius: 16px;
+  text-decoration: none;
+  background: rgb(52, 106, 177);
 
-  background: linear-gradient(
-    135deg,
-    var(--primary),
-    var(--secondary)
-  );
+  color: rgb(0, 8, 9);
 
-  color: white;
+  border: 1px solid rgba(255,255,255,.15);
 
   font-weight: 700;
 
@@ -359,12 +346,13 @@
 
   border-radius: 16px;
 
+  text-decoration: none;
+
   background: rgba(255,255,255,.08);
 
   color: white;
 
-  border: 1px solid rgba(255,255,255,.15);
-
+  border: 1px solid rgba(255,255,255,.15); 
   backdrop-filter: blur(15px);
 
   cursor: pointer;
@@ -397,7 +385,7 @@
 
   border-radius: 18px;
 
-  color: white;
+  color: var(--text);
 
   font-weight: 600;
 
@@ -433,12 +421,12 @@
 }
 
 .section-title h2 {
-  color: white;
+  color: var(--text);
   font-size: 2rem;
 }
 
 .section-title p {
-  color: #94a3b8;
+  color: var(--text-secondary);
   margin-top: 10px;
 }
 
@@ -457,19 +445,87 @@
 }
 
 .match-item {
-  background: rgba(255,255,255,.04);
-
-  border: 1px solid rgba(255,255,255,.08);
-
-  border-radius: 24px;
-
-  padding: 25px 30px;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  transition: .3s;
+  padding: 24px 30px;
+
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 24px;
+
+  backdrop-filter: blur(20px);
+
+  transition: all .3s ease;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.match-item:hover {
+  transform: translateY(-5px);
+
+  border-color: rgba(63,188,210,.35);
+
+  box-shadow:
+    0 15px 35px rgba(0,0,0,.25),
+    0 0 25px rgba(63,188,210,.12);
+}
+
+.match-item h3 {
+  margin: 0 0 8px;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.match-item p {
+  margin: 0;
+  color: rgba(255,255,255,.7);
+  font-size: .95rem;
+  max-width: 400px;
+}
+
+/* Percentage Badge */
+.match-item span {
+  width: 70px;
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: linear-gradient(
+    135deg,
+    #38bdf8,
+    #06b6d4
+  );
+
+  color: white;
+  font-weight: 800;
+  font-size: 1.1rem;
+
+  box-shadow:
+    0 10px 25px rgba(6,182,212,.35);
+}
+
+.match-item::before {
+  content: "";
+
+  position: absolute;
+  left: 0;
+  top: 0;
+
+  width: 4px;
+  height: 100%;
+
+  background: linear-gradient(
+    to bottom,
+    #38bdf8,
+    #06b6d4
+  );
 }
 
 .match-item:hover {
@@ -479,11 +535,11 @@
 }
 
 .match-item h3 {
-  color: white;
+  color: var(--text);
 }
 
 .match-item p {
-  color: #94a3b8;
+  color: var(--text-secondary);
 }
 
 .match-item span {
@@ -506,35 +562,43 @@
 }
 
 .destination-card {
-  height: 400px;
-
-  border-radius: 28px;
-
-  overflow: hidden;
-
   position: relative;
 
-  background-size: cover;
-  background-position: center;
+  height: 350px;
+  width: 100%;
 
-  cursor: pointer;
-
-  transition: .4s;
+  border-radius: 24px;
+  overflow: hidden;
 }
 
-.destination-card:hover {
-  transform: translateY(-10px);
+.destination-image {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
 }
 
-.canada {
-  background-image:
-    linear-gradient(
-      rgba(0,0,0,.15),
-      rgba(0,0,0,.55)
-    ),
-    url("https://images.unsplash.com/photo-1503614472-8c93d56cd263");
-}
+.card-overlay {
+  position: absolute;
+  inset: 0;
 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  padding: 24px;
+
+  background: linear-gradient(
+    to top,
+    rgba(0,0,0,.8),
+    rgba(0,0,0,.2),
+    transparent
+  );
+}
+  
 .japan {
   background-image:
     linear-gradient(
@@ -553,24 +617,7 @@
     url("https://images.unsplash.com/photo-1513635269975-59663e0ac1ad");
 }
 
-.card-overlay {
-  position: absolute;
 
-  bottom: 0;
-  left: 0;
-  right: 0;
-
-  padding: 30px;
-}
-
-.card-overlay h3 {
-  color: white;
-  font-size: 2rem;
-}
-
-.card-overlay span {
-  color: #f8fafc;
-}
 
 /* =========================
    PASSPORT
@@ -653,11 +700,11 @@
 }
 
 .timeline-item h3 {
-  color: white;
+  color: var(--text);
 }
 
 .timeline-item p {
-  color: #94a3b8;
+  color: var(--text-secondary);
   margin-top: 5px;
 }
 

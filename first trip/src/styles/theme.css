@@ -1,8 +1,8 @@
-    .app-theme.dark {
-  --bg: #020617;
-  --bg-soft: #0f172a;
+/* DARK THEME */
 
-  --card: #111827;
+.app-theme.dark {
+  --bg: #020617;
+  --card: #0f172a;
 
   --text: #ffffff;
   --text-secondary: #94a3b8;
@@ -11,11 +11,14 @@
 
   background: var(--bg);
   color: var(--text);
+
+  min-height: 100vh;
 }
+
+/* LIGHT THEME */
+
 .app-theme.light {
   --bg: #f8fafc;
-  --bg-soft: #ffffff;
-
   --card: #ffffff;
 
   --text: #0f172a;
@@ -25,4 +28,6 @@
 
   background: var(--bg);
   color: var(--text);
+
+  min-height: 100vh;
 }

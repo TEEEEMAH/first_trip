@@ -1,6 +1,9 @@
 import "../styles/Dashboard.css";
 import { Link } from "react-router-dom";
 import AppLayout from "../components/Layout/AppLayout";
+import canadaImg from "../assets/canada.jpg";
+import japanImg from "../assets/japan.jpg";
+import ukImg from "../assets/uk.jpg";
 
 const Dashboard = () => {
   return (
@@ -32,13 +35,13 @@ const Dashboard = () => {
 
               <div className="hero-actions">
 
-                <button className="primary-btn">
-                  Start New Journey
-                </button>
+                <Link to="/create-trip" className="primary-btn">
+                 Start New Journey
+                </Link>
 
-                <button className="secondary-btn">
+                <Link to="/ai-assistant" className="secondary-btn">
                   AI Travel Assistant
-                </button>
+                </Link>
 
               </div>
 
@@ -132,22 +135,42 @@ const Dashboard = () => {
           </div>
 
           <div className="destination-grid">
+            
 
-            <div className="destination-card canada">
-              <div className="card-overlay">
-                <h3>Canada</h3>
-                <span>Mountain Adventures</span>
-              </div>
-            </div>
+
+            
+            <div className="destination-card">
+              <img
+               src={canadaImg}
+               alt="Canada"
+               className="destination-image"
+                />
+
+               <div className="card-overlay">
+               <h3>Canada</h3>
+               <span>Mountain Adventures</span>
+                 </div>
+                 </div>
 
             <div className="destination-card japan">
-              <div className="card-overlay">
-                <h3>Japan</h3>
-                <span>Future Meets Tradition</span>
-              </div>
+            <img
+             src={japanImg}
+             alt="Japan"
+            className="destination-image"
+            />
+
+             <div className="card-overlay">
+              <h3>Japan</h3>
+            <span>Future Meets Tradition</span>
+            </div>
             </div>
 
             <div className="destination-card uk">
+             <img src={ukImg}
+                  alt="Uk"
+                  className="destination-image"
+                  />
+              
               <div className="card-overlay">
                 <h3>United Kingdom</h3>
                 <span>World Class Education</span>

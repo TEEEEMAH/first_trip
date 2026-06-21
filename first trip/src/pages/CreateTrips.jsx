@@ -1,4 +1,5 @@
 import { useState } from "react";
+import AppLayout from "../components/Layout/AppLayout";
 import "../styles/CreateTrips.css";
 
 const destinations = [
@@ -25,6 +26,7 @@ const CreateTrip = () => {
   const [timeline, setTimeline] = useState("6 Months");
 
   return (
+    <AppLayout> 
     <main className="create-trip-page">
 
       {/* HEADER */}
@@ -217,6 +219,7 @@ const CreateTrip = () => {
       </section>
 
     </main>
+    </AppLayout>  
   );
 };
 
